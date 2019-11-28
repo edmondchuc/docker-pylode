@@ -21,3 +21,8 @@ java -jar /ontology_diagram_generator/plantuml.jar -tsvg input/${ONTOLOGY_FILE}.
 # Run pylode-inject.
 echo "Running pylode-inject"
 python3 /pylode-inject/pylode_inject.py input/pylode_inject.yml input/index.html input/index.html
+
+# Output the ontology in different RDF serialisations - (input: Turtle, output: RDF/XML, JSON-LD, N-Triples, Notation3)
+echo "Creating additional RDF serialisations of the ontology"
+pip3 install rdflib-jsonld
+python3 generate_rdf.py input/${ONTOLOGY_FILE} input/

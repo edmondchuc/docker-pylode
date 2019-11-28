@@ -27,6 +27,7 @@ WORKDIR /pyLODE/src/pylode/
 RUN pip install -r ../../requirements.txt
 
 ADD run_pylode.sh .
+ADD generate_rdf.py .
 
 RUN chmod 744 run_pylode.sh
 
